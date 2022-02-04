@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+  }
+
+ body{
+   height: 100vh;
+   margin: 0px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .box{
+   height: 500px;
+   width: 500px;
+   position: relative;
+   overflow: hidden;
+ }
+
+ .vial{
+   height: 500px;
+   width: auto;
+   position: absolute;
+   z-index: 10;
+ }
+
+ .main-liquid{
+   content: "";
+   position: absolute;
+   z-index: 2;
+   width: 500px;
+   height: 500px;
+   left: 5%;
+   background: linear-gradient(#CC1C3B, #E451E3);
+   border-style: solid;
+   border-color: black;
+   border-width: 5px;
+   border-radius: 40%;
+   animation: fill 7s ease-in-out infinite;
+ }
+
+ .secondary-liquid{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(#CC1C3B, #E451E3);
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  border-radius: 40%;
+  animation: fill 7s ease-in-out infinite;
+}
+
+.bubble{
+  position: absolute;
+  z-index: 9;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  border-radius: 50%;
+  animation: moveUp 7s ease-in-out infinite;
+}
+
+.bubble:nth-of-type(1){
+  width: 35px;
+  height: 35px;
+  --atop: 250px;
+  left: 40%;
+  top: 500px;
+}
+
+.bubble:nth-of-type(2){
+  width: 15px;
+  height: 15px;
+  --atop: 320px;
+  left: 37%;
+  top: 400px;
+}
+
+.bubble:nth-of-type(3){
+  --atop: 300px;
+  left: 45%;
+  top: 450px;
+}
+
+.bubble:nth-of-type(4){
+  --atop: 280px;
+  left: 50%;
+  top: 750px;
+}
+
+.bubble:nth-of-type(5){
+  --atop: 260px;
+  left: 55%;
+  top: 600px;
+}
+
+.bubble:nth-of-type(6){
+  width: 35px;
+  height: 35px;
+  --atop: 320px;
+  left: 52%;
+  top: 400px;
+}
+
+.bubble:nth-of-type(7){
+  width: 25px;
+  height: 25px;
+  --atop: 330px;
+  left: 58%;
+  top: 500px;
+}
+
+.bubble:nth-of-type(8){
+  width: 15px;
+  height: 15px;
+  --atop: 330px;
+  left: 43%;
+  top: 600px
+}
+
+@keyframes fill{
+  from{
+    top: 400px;
+    transform: rotate(0deg);
+  }
+  to{
+    top: 250px;
+    transform: rotate(300deg);
+  }
+}
+
+@keyframes moveUp{
+  100% {top: var(--atop);}
+}
